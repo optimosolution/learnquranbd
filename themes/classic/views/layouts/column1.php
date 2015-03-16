@@ -45,17 +45,25 @@
 </div>
 <div class="col-md-3">
     <section class="">
-        <?php $livequran = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/live_quran.jpg', 'Live Quran', array("title" => 'Live Quran', 'style' => 'width:260px;')); ?> 
+        <?php $livequran = CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/live_quran.jpg', 'Live Quran', array("title" => 'Live Quran', 'class' => 'img-thumbnail img-polaroid')); ?> 
         <?php echo CHtml::link($livequran, array('site/livequran'), array('class' => '')); ?>       
         <?php //echo CHtml::link('<i class="fa fa-play-circle"></i> Read Live! QURAN', array('site/livequran'), array('class' => 'btn btn-primary btn-lg btn-block')); ?>                            
     </section>                        
     <div class="panel panel-theme">
         <div class="panel-heading">
-            <h3 class="panel-title"><?php echo ContentCategory::getCategoryName(2); ?></h3>
+            <h3 class="panel-title">&nbsp;</h3>
         </div>
         <div class="panel-body">
-            <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/news_notice.jpg', 'News', array("title" => 'News', 'style' => 'width:240px;')); ?> 
-            <?php $this->get_newses(2); ?>
+            <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/assets/images/news_notice.jpg', 'News', array("title" => 'News', 'class' => 'img-thumbnail img-polaroid')); ?> 
+            <?php echo CHtml::link('<i class="fa fa-sign-out"></i> ' . Content::get_title(2), array('content/view', 'id' => 2)); ?>
+        </div>
+    </div>
+    <div class="panel panel-theme">
+        <div class="panel-heading">
+            <h3 class="panel-title"><?php echo ContentCategory::getCategoryName(8); ?></h3>
+        </div>
+        <div class="panel-body">
+            <?php $this->get_newses(8); ?>
         </div>
     </div>
     <div class="panel panel-theme">
